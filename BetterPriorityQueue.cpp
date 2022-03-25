@@ -29,6 +29,8 @@ bool BetterPriorityQueue::Update(DNode node){
     bool output = false;
     priority_queue::c.clear();
 
+    //clean the priority queue and store old one in pQueue so we won't change the priority queue
+
     for(size_t i =0;i<pQueue.size();i++){
 
         
