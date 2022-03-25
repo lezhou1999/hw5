@@ -37,6 +37,8 @@ class BetterPriorityQueue: public priority_queue<DNode, vector<DNode>, greater<D
         bool Update(DNode node);
         string ToString();
         static string DnodeToString(DNode node);
+
+	private:
     
     
         vector<DNode> pQueue;
