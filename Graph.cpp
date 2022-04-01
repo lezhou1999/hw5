@@ -125,22 +125,26 @@ string Graph:: GraphEdgeToString(const GraphEdge *ge){
 		
 const vector<GraphEdge*>& Graph::GetEdges(const GraphNode *gn) const{
 
-    int idx = 0;
+
+
+
+
+    bool keyNotExist = true;
     for(size_t i=0;i<nodes.size();i++){
         if(nodes.at(i)->key==gn->key && nodes.at(i)->data==gn->data){
-            for(size_t i =0;i<graph.size();i++){
-                if(nodes.at(i)->key==gn->key){
-                    idx = i;
-                }   
-            }   
-        }else{
-            throw invalid_argument("node is not exist");
+            keyNotExist =false;
         }
     }
-   
-    
+    if(keyNotExist==true){
+        throw invalid_argument("node is not exist");
+    }
+    int idx = 0;
+    for(size_t i =0;i<graph.size();i++){
+        if(nodes.at(i)->key==gn->key){
+            idx = i;
+        }   
+    }
     return graph.at(idx);
-
 }
 
 
